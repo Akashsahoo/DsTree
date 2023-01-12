@@ -203,8 +203,10 @@ def deleteNodeBT(rootNode,dNode):
             treenode = customqueue.dequeue()
             if treenode.value.data == dNode:
                 deepnode = getdeepestNodeBT(rootNode)
-                deletedeepestNodeBT(newBT,deepnode)
                 treenode.value.data = deepnode.data
+                deletedeepestNodeBT(newBT,deepnode)
+                
+                
                 return
 
             leftchild = treenode.value.leftchild
@@ -220,7 +222,7 @@ def deleteNodeBT(rootNode,dNode):
             #     return
             if rightchild:
                 customqueue.enqueue(rightchild)
-deleteNodeBT(newBT,'Tea')
+deleteNodeBT(newBT,'Coffee')
 print("after \n")
 # levelorder(newBT)
 
@@ -230,6 +232,6 @@ def deleteBT(rootNode):
     rootNode.rightchild = None
     return "The BT has been successfully deleted" 
 
-levelorder(newBT)
-deleteBT(newBT)
+# levelorder(newBT)
+# deleteBT(newBT)
 levelorder(newBT)
